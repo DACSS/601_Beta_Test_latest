@@ -3,7 +3,7 @@ project:
 
 website:
   title: ""
-  site-url: https://github.com/DACSS
+  site-url: https://dacss.github.io/601_Beta_Test_latest/
   twitter-card:
     creator: "@UMassDACSS"
     site: "@UMassDACSS"
@@ -13,13 +13,13 @@ website:
     logo: images/UMass White Wordmark Horiz.png
     right:
       - text: ""
-        href: https://github.com/DACSS
+        href: https://dacss.github.io/601_Beta_Test_latest/
       - text: "Contributors"
         file: about.qmd
       - href: https://umass.edu/sbs/dacss
         text: "DACSS"
       - icon: github
-        href: https://github.com/DACSS
+        href: https://dacss.github.io/601_Beta_Test_latest/
         aria-label: GitHub
 
 execution:
@@ -31,6 +31,6 @@ format:
     mainfont: Open Sans
     linkcolor: "#881c1c"
     toc: true
-    theme: 
+    theme:
       light: [flatly, styles.scss]
       dark: [darkly, styles.scss]
