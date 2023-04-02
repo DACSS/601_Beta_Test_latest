@@ -69,6 +69,6 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: 'Please render your challenge qmd file in post folder to generate freeze files'
+              body: 'This is Sidharth's bot - Please render your challenge qmd file in post folder to generate freeze files'
             })
             throw new Error("Generate comment Sucessfully and github action should fail!");
