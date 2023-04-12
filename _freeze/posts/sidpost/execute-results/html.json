@@ -1,0 +1,18 @@
+{
+  "hash": "5f83fad73409f91cd1b6f101fd1f8415",
+  "result": {
+    "markdown": "---\ntitle: \"Something\"\nauthor: \"sid\"\ndescription: \"Test\"\ndate: \"04/12/2023\"\nformat:\n  html:\n    df-print: paged\n    toc: true\n    code-copy: true\n    code-tools: true\n    css: styles.css\ncategories:\n  - sid\neditor_options: \n  chunk_output_type: inline\neditor: \n  markdown: \n    wrap: sentence\n---\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)\nknitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE)\n```\n:::\n\n\n## Part 1. Introduction\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n#reading in air quality data\n\n#reading in deaths dataset\ndeaths <- read_csv(\"siddatafolder/2021-05-14_deaths_final_1999_2013_county_year_sup.csv\") %>%\n  #filtering for occurrence deaths (i.e. all deaths that occurred, disregarding residence)\n  filter(Geography_Type == \"Occurrence\") %>%\n  #de-selecting geography type as they are now all occurrence\n  select(-Geography_Type)\nhead(deaths)\n```\n\n::: {.cell-output-display}\n`````{=html}\n<div data-pagedtable=\"false\">\n  <script data-pagedtable-source type=\"application/json\">\n{\"columns\":[{\"label\":[\"Year\"],\"name\":[1],\"type\":[\"dbl\"],\"align\":[\"right\"]},{\"label\":[\"County\"],\"name\":[2],\"type\":[\"chr\"],\"align\":[\"left\"]},{\"label\":[\"Strata\"],\"name\":[3],\"type\":[\"chr\"],\"align\":[\"left\"]},{\"label\":[\"Strata_Name\"],\"name\":[4],\"type\":[\"chr\"],\"align\":[\"left\"]},{\"label\":[\"Cause\"],\"name\":[5],\"type\":[\"chr\"],\"align\":[\"left\"]},{\"label\":[\"Cause_Desc\"],\"name\":[6],\"type\":[\"chr\"],\"align\":[\"left\"]},{\"label\":[\"Count\"],\"name\":[7],\"type\":[\"dbl\"],\"align\":[\"right\"]},{\"label\":[\"Annotation_Code\"],\"name\":[8],\"type\":[\"dbl\"],\"align\":[\"right\"]},{\"label\":[\"Annotation_Desc\"],\"name\":[9],\"type\":[\"chr\"],\"align\":[\"left\"]}],\"data\":[{\"1\":\"1999\",\"2\":\"Alameda\",\"3\":\"Total Population\",\"4\":\"Total Population\",\"5\":\"ALL\",\"6\":\"All causes (total)\",\"7\":\"9738\",\"8\":\"NA\",\"9\":\"NA\"},{\"1\":\"1999\",\"2\":\"Alameda\",\"3\":\"Age\",\"4\":\"Under 1 year\",\"5\":\"ALL\",\"6\":\"All causes (total)\",\"7\":\"136\",\"8\":\"NA\",\"9\":\"NA\"},{\"1\":\"1999\",\"2\":\"Alameda\",\"3\":\"Age\",\"4\":\"1-4 years\",\"5\":\"ALL\",\"6\":\"All causes (total)\",\"7\":\"29\",\"8\":\"NA\",\"9\":\"NA\"},{\"1\":\"1999\",\"2\":\"Alameda\",\"3\":\"Age\",\"4\":\"5-14 years\",\"5\":\"ALL\",\"6\":\"All causes (total)\",\"7\":\"38\",\"8\":\"NA\",\"9\":\"NA\"},{\"1\":\"1999\",\"2\":\"Alameda\",\"3\":\"Age\",\"4\":\"15-24 years\",\"5\":\"ALL\",\"6\":\"All causes (total)\",\"7\":\"114\",\"8\":\"NA\",\"9\":\"NA\"},{\"1\":\"1999\",\"2\":\"Alameda\",\"3\":\"Age\",\"4\":\"25-34 years\",\"5\":\"ALL\",\"6\":\"All causes (total)\",\"7\":\"183\",\"8\":\"NA\",\"9\":\"NA\"}],\"options\":{\"columns\":{\"min\":{},\"max\":[10]},\"rows\":{\"min\":[10],\"max\":[10]},\"pages\":{}}}\n  </script>\n</div>\n`````\n:::\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-in-header": [
+        "<link href=\"../site_libs/pagedtable-1.1/css/pagedtable.css\" rel=\"stylesheet\" />\n<script src=\"../site_libs/pagedtable-1.1/js/pagedtable.js\"></script>\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

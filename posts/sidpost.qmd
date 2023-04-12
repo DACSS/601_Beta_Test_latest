@@ -1,0 +1,42 @@
+---
+title: "Something"
+author: "sid"
+description: "Test"
+date: "04/12/2023"
+format:
+  html:
+    df-print: paged
+    toc: true
+    code-copy: true
+    code-tools: true
+    css: styles.css
+categories:
+  - sid
+editor_options: 
+  chunk_output_type: inline
+editor: 
+  markdown: 
+    wrap: sentence
+---
+
+```{r}
+#| label: setup
+#| warning: false
+library(tidyverse)
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE)
+```
+
+## Part 1. Introduction
+
+
+```{r}
+#reading in air quality data
+
+#reading in deaths dataset
+deaths <- read_csv("siddatafolder/2021-05-14_deaths_final_1999_2013_county_year_sup.csv") %>%
+  #filtering for occurrence deaths (i.e. all deaths that occurred, disregarding residence)
+  filter(Geography_Type == "Occurrence") %>%
+  #de-selecting geography type as they are now all occurrence
+  select(-Geography_Type)
+head(deaths)
+```
