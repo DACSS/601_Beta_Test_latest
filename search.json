@@ -4,14 +4,14 @@
     "href": "posts/sidpost.html",
     "title": "Something",
     "section": "",
-    "text": "library(tidyverse)\nknitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE)"
+    "text": "library(tidyverse)\nlibrary(ggplot2)\nknitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE)"
   },
   {
     "objectID": "posts/sidpost.html#part-1.-introduction",
     "href": "posts/sidpost.html#part-1.-introduction",
     "title": "Something",
     "section": "Part 1. Introduction",
-    "text": "Part 1. Introduction\n\n#reading in air quality data\n\n#reading in deaths dataset\ndeaths <- read_csv(\"siddatafolder/2021-05-14_deaths_final_1999_2013_county_year_sup.csv\") %>%\n  #filtering for occurrence deaths (i.e. all deaths that occurred, disregarding residence)\n  filter(Geography_Type == \"Occurrence\") %>%\n  #de-selecting geography type as they are now all occurrence\n  select(-Geography_Type)\nhead(deaths)"
+    "text": "Part 1. Introduction\n\n#reading in air quality data\n\n#reading in deaths dataset\ndeaths <- read_csv(\"siddatafolder/2021-05-14_deaths_final_1999_2013_county_year_sup.csv\") %>%\n  #filtering for occurrence deaths (i.e. all deaths that occurred, disregarding residence)\n  filter(Geography_Type == \"Occurrence\") %>%\n  #de-selecting geography type as they are now all occurrence\n  select(-Geography_Type)\n\nggplot(deaths, aes(x=Year, y = Count)) + geom_bar(stat=\"identity\")"
   },
   {
     "objectID": "index.html",
