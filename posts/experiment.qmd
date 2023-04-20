@@ -1,7 +1,7 @@
 ---
-title: "Homework 3"
+title: "Beta Test"
 author: "Miguel Curiel"
-description: "Regression analyses and transformations for DACSS 603."
+description: "Experiment"
 date: "04/20/2023"
 format:
   html:
