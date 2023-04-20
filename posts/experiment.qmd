@@ -1,0 +1,71 @@
+---
+title: "Homework 3"
+author: "Miguel Curiel"
+description: "Regression analyses and transformations for DACSS 603."
+date: "04/20/2023"
+format:
+  html:
+    toc: true
+    code-fold: true
+    code-copy: true
+    code-tools: true
+categories:
+  - hw3
+  - linear regression
+  - distribution transformation
+editor:
+  markdown:
+    wrap: 72
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+```
+
+```{r, eval=TRUE}
+# load necessary packages
+library(tidyverse)
+library(alr4)
+library(smss)
+```
+
+# Question 1
+
+**United Nations** (Data file: UN11in alr4) The data in the file UN11
+contains several variables, including ppgdp, the gross national product
+per person in U.S. dollars, and fertility, the birth rate per 1000
+females, both from the year 2009. The data are for 199 localities,
+mostly UN member countries, but also other areas such as Hong Kong that
+are not independent countries. The data were collected from the United
+Nations (2011). We will study the dependence of fertility on ppgdp.
+
+a.  Identify the predictor and the response.
+
+    a.  Predictor = ppgdp
+
+    b.  Response = fertility
+
+b.  Draw the scatterplot of fertility on the vertical axis versus ppgdp
+    on the horizontal axis and summarize the information in this graph.
+    Does a straight-line mean function seem to be plausible for a
+    summary of this graph?
+
+    a.  No, a straight-line mean function does not seem plausible
+        because the distribution seems to be somewhat curvilinear.
+
+c.  Draw the scatterplot of log(fertility) versus log(ppgdp) using
+    natural logarithms. Does the simple linear regression model seem
+    plausible for a summary of this graph? If you use a different base
+    of logarithms, the shape of the graph won't change, but the values
+    on the axes will change.
+
+    a.  Yes, a simple linear regression model with a logarithmic
+        transformation seems to be plausible as it is better at
+        capturing the curvilinear relationship between variables.
+
+```{r, eval=TRUE, echo=TRUE}
+ggplot(data = UN11, aes(x = ppgdp, y = fertility)) +
+  geom_point() +
+  geom_smooth(method = 'lm', se=F) +
+  labs(title='1.b. Scatterplot of fertility versus ppgdp')
+```
