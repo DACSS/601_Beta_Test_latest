@@ -1,0 +1,16 @@
+{
+  "hash": "07717cf812a7efe5f230b0a7b43e0f54",
+  "result": {
+    "markdown": "---\ntitle: \"Beta Test\"\nauthor: \"Miguel Curiel\"\ndescription: \"Challenge\"\ndate: \"04/20/2023\"\nformat:\n  html:\n    toc: true\n    code-fold: true\n    code-copy: true\n    code-tools: true\ncategories:\n  - hw3\n  - linear regression\n  - distribution transformation\neditor:\n  markdown:\n    wrap: 72\n---\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# load necessary packages\nlibrary(tidyverse)\nlibrary(alr4)\nlibrary(smss)\n```\n:::\n\n\n# Question 1\n\n**United Nations** (Data file: UN11in alr4) The data in the file UN11\ncontains several variables, including ppgdp, the gross national product\nper person in U.S. dollars, and fertility, the birth rate per 1000\nfemales, both from the year 2009. The data are for 199 localities,\nmostly UN member countries, but also other areas such as Hong Kong that\nare not independent countries. The data were collected from the United\nNations (2011). We will study the dependence of fertility on ppgdp.\n\na.  Identify the predictor and the response.\n\n    a.  Predictor = ppgdp\n\n    b.  Response = fertility\n\nb.  Draw the scatterplot of fertility on the vertical axis versus ppgdp\n    on the horizontal axis and summarize the information in this graph.\n    Does a straight-line mean function seem to be plausible for a\n    summary of this graph?\n\n    a.  No, a straight-line mean function does not seem plausible\n        because the distribution seems to be somewhat curvilinear.\n\nc.  Draw the scatterplot of log(fertility) versus log(ppgdp) using\n    natural logarithms. Does the simple linear regression model seem\n    plausible for a summary of this graph? If you use a different base\n    of logarithms, the shape of the graph won't change, but the values\n    on the axes will change.\n\n    a.  Yes, a simple linear regression model with a logarithmic\n        transformation seems to be plausible as it is better at\n        capturing the curvilinear relationship between variables.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nggplot(data = UN11, aes(x = ppgdp, y = fertility)) +\n  geom_point() +\n  geom_smooth(method = 'lm', se=F) +\n  labs(title='1.b. Scatterplot of fertility versus ppgdp')\n```\n\n::: {.cell-output-display}\n![](experiment_files/figure-html/unnamed-chunk-2-1.png){width=672}\n:::\n:::\n",
+    "supporting": [
+      "experiment_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
