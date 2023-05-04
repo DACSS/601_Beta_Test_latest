@@ -1,5 +1,5 @@
 ---
-title: "My first title"
+title: "No title"
 author: "sid"
 description: "Test"
 date: "04/12/2023"
