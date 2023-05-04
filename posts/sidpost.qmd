@@ -1,5 +1,5 @@
 ---
-title: "My first title"
+title: "My second title"
 author: "sid"
 description: "Test"
 date: "04/12/2023"
@@ -12,6 +12,7 @@ format:
     css: styles.css
 categories:
   - sid
+  - sid2
 editor_options:
   chunk_output_type: inline
 editor:
