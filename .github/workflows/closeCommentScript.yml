@@ -23,4 +23,4 @@ jobs:
         uses: superbrothers/close-pull-request@v3
         with:
           comment: "This is Sidharth bot - Please submit in submission branch instead of template branch"
-       repo-token: ${{ secrets.PAT }}   
+          repo-token: ${{ secrets.PAT }}   
