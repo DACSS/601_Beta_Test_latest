@@ -11,7 +11,7 @@
     "href": "posts/sidpost.html#part-1.-introduction",
     "title": "Something",
     "section": "Part 1. Introduction",
-    "text": "Part 1. Introduction\n\n#reading in air quality data\n\n#reading in deaths dataset\ndeaths <- read_csv(\"siddatafolder/2021-05-14_deaths_final_1999_2013_county_year_sup.csv\") %>%\n  #filtering for occurrence deaths (i.e. all deaths that occurred, disregarding residence)\n  filter(Geography_Type == \"Occurrence\") %>%\n  #de-selecting geography type as they are now all occurrence\n  select(-Geography_Type)\n\nggplot(deaths, aes(x=Year, y = Count)) + geom_bar(stat=\"identity\")"
+    "text": "Part 1. Introduction\n\n#reading in air quality data\n\n#reading in deaths dataset\ndeaths &lt;- read_csv(\"siddatafolder/2021-05-14_deaths_final_1999_2013_county_year_sup.csv\") %&gt;%\n  #filtering for occurrence deaths (i.e. all deaths that occurred, disregarding residence)\n  filter(Geography_Type == \"Occurrence\") %&gt;%\n  #de-selecting geography type as they are now all occurrence\n  select(-Geography_Type)\n\nggplot(deaths, aes(x=Year, y = Count)) + geom_bar(stat=\"identity\")"
   },
   {
     "objectID": "posts/experiment.html",
@@ -25,7 +25,14 @@
     "href": "index.html",
     "title": "DACSS 601: Data Science Fundamentals",
     "section": "",
-    "text": "The blog posts here are contributed by students enrolled in DACSS 601, Fundamentals of Data Science. The course provides students with an introduction to R and the tidyverse, scientific publishing, and collaboration through GitHub, building a foundation for future coursework. Students also are introduced to general data management and data wrangling skills, with an emphasis on best practice workflows and tidy data management.\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nApr 20, 2023\n\n\nBeta Test\n\n\nMiguel Curiel\n\n\n\n\nApr 12, 2023\n\n\nSomething\n\n\nsid\n\n\n\n\n\n\nNo matching items"
+    "text": "The blog posts here are contributed by students enrolled in DACSS 601, Fundamentals of Data Science. The course provides students with an introduction to R and the tidyverse, scientific publishing, and collaboration through GitHub, building a foundation for future coursework. Students also are introduced to general data management and data wrangling skills, with an emphasis on best practice workflows and tidy data management.\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nApr 20, 2023\n\n\nBeta Test\n\n\nMiguel Curiel\n\n\n\n\nApr 12, 2023\n\n\nSomething\n\n\nsid \n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Contributors",
+    "section": "",
+    "text": "Find out more about our DACSS students who contributed to the blog.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYour Name\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about/about.html",
@@ -75,12 +82,5 @@
     "title": "Your Name",
     "section": "Fun fact",
     "text": "Fun fact"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Contributors",
-    "section": "",
-    "text": "Find out more about our DACSS students who contributed to the blog.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYour Name\n\n\n\n\n\n\n\nNo matching items"
   }
 ]
