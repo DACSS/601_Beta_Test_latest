@@ -4,7 +4,7 @@ on:
   pull_request_target:
     branches:
       - template
-       types: [opened, synchronize, reopened]
+    types: [opened, synchronize, reopened]
        
 jobs:
   auto-close-template:
