@@ -1,7 +1,9 @@
 name: Auto Close if submitted on Wrong branch
 
 on:
-  pull_request:
+  pull_request_target:
+    branches:
+      - template
        types: [opened, synchronize, reopened]
        
 jobs:
@@ -14,19 +16,9 @@ jobs:
         with:
           ref: ${{github.event.pull_request.head.ref}}
           repository: ${{github.event.pull_request.head.repo.full_name}}
-
-      - name: Check if the branch is the template branch
-        uses: actions/github-script@v6
-        with:
-          github-token: ${{ secrets.PAT }}
-          script: |
-            const baseBranch = context.payload.pull_request.base.ref;
-            echo "Base branch is $baseBranch"
-            echo "curBranch=$baseBranch" >> $GITHUB_ENV
-
-            
+           
       - name: Close pull request
-        if: ${{env.curBranch == 'template' }}
+        if: ${{ github.base_ref }} == "template"
         uses: peter-evans/close-pull@v3
         with:
           pull-request-number: 1
