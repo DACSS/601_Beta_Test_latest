@@ -1,0 +1,25 @@
+name: Auto Close if submitted on Wrong branch
+
+on:
+  pull_request_target:
+    branches:
+      - template
+    types: [opened, synchronize, reopened]
+       
+jobs:
+  auto-close-template:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: ${{github.event.pull_request.head.ref}}
+          repository: ${{github.event.pull_request.head.repo.full_name}}
+           
+      - name: Close pull request
+        if: ${{ github.base_ref }} == "template"
+        uses: peter-evans/close-pull@v3
+        with:
+          comment: This is Sidharth bot - Please submit in submission branch instead of template branch
+          github-token: ${{secrets.PAT}}
