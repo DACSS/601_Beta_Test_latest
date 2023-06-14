@@ -34,7 +34,7 @@ jobs:
           echo "allowed=$user_is_allowed"
 
       - name: Close pull request
-        if: ${{ github.base_ref }} == 'template' && ${{ env.allowed }} == 'true'
+        if: ${{ github.base_ref }} == 'template' && ${{ env.allowed }} == 'false'
         uses: peter-evans/close-pull@v3
         with:
           comment: This is Sidharth bot - Please submit in the submission branch instead of the template branch
