@@ -5,31 +5,36 @@ on:
     branches:
       - template
     types: [opened, synchronize, reopened]
-       
+
 jobs:
   auto-close-template:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
-          ref: ${{github.event.pull_request.head.ref}}
-          repository: ${{github.event.pull_request.head.repo.full_name}}
-          
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+
       - name: Check for valid user
         run: |
           ALLOWED_USERS=("SidharthSaluja" "sp-conway")
           user="${{ github.event.pull_request.user.login }}"
           echo $user
-          if [[ " ${ALLOWED_USERS[@]} " =~ " ${USER} " ]]; then
-            echo "allowed=true" >> $GITHUB_ENV
-          else
-             echo "allowed=false" >> $GITHUB_ENV
-          fi
-           
+          user_is_allowed=false
+          for ALLOWED_USER in "${ALLOWED_USERS[@]}"; do
+            if [[ "$ALLOWED_USER" == "$user" ]]; then
+              user_is_allowed=true
+              echo "sucess!"
+              break
+            fi
+          done
+          echo "allowed=$user_is_allowed" >> $GITHUB_ENV
+          echo "allowed=$user_is_allowed"
+
       - name: Close pull request
-        if: ${{ github.base_ref }} == "template" && ${{ env.successVal == 'false'}}
+        if: ${{ env.allowed == 'false'}}
         uses: peter-evans/close-pull@v3
         with:
-          comment: This is Sidharth bot - Please submit in submission branch instead of template branch
+          comment: This is Sidharth bot - Please submit in the submission branch instead of the template branch
