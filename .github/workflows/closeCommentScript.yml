@@ -19,7 +19,7 @@ jobs:
           
       - name: Check for valid user
         run: |
-          echo ${{github.event.pull_request}}
+          echo "${{ toJson(github.event.pull_request) }}"
           echo "DONE"
           user="${{ github.event.pull_request.user.login }}"
           echo $user
