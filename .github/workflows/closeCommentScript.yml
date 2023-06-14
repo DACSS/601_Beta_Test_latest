@@ -19,10 +19,10 @@ jobs:
           
       - name: Check for valid user
         run: |
-          console.log(${{github.event.pull_request}})
-          console.log("DONE")
+          echo ${{github.event.pull_request}}
+          echo "DONE"
           user="${{ github.event.pull_request.user.login }}"
-          console.log(user)
+          echo $user
            
       - name: Close pull request
         if: ${{ github.base_ref }} == "template"
