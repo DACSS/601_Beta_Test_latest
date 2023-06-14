@@ -19,13 +19,17 @@ jobs:
           
       - name: Check for valid user
         run: |
-          echo "${{ toJson(github.event.pull_request) }}"
-          echo "DONE"
+          ALLOWED_USERS=("SidharthSaluja" "sp-conway")
           user="${{ github.event.pull_request.user.login }}"
           echo $user
+          if [[ " ${ALLOWED_USERS[@]} " =~ " ${USER} " ]]; then
+            echo "allowed=true" >> $GITHUB_ENV
+          else
+             echo "allowed=false" >> $GITHUB_ENV
+          fi
            
       - name: Close pull request
-        if: ${{ github.base_ref }} == "template"
+        if: ${{ github.base_ref }} == "template" && ${{ env.successVal == 'false'}}
         uses: peter-evans/close-pull@v3
         with:
           comment: This is Sidharth bot - Please submit in submission branch instead of template branch
