@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://dacss.github.io/601_Beta_Test_latest/posts/sidpost.html</loc>
-    <lastmod>2023-06-13T00:53:47.820Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dacss.github.io/601_Beta_Test_latest/posts/experiment.html</loc>
-    <lastmod>2023-06-13T00:53:51.196Z</lastmod>
-  </url>
-  <url>
     <loc>https://dacss.github.io/601_Beta_Test_latest/index.html</loc>
-    <lastmod>2023-06-13T00:53:52.685Z</lastmod>
+    <lastmod>2023-06-15T15:17:01.225Z</lastmod>
   </url>
   <url>
     <loc>https://dacss.github.io/601_Beta_Test_latest/about.html</loc>
-    <lastmod>2023-06-13T00:53:53.173Z</lastmod>
+    <lastmod>2023-06-15T15:17:03.305Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dacss.github.io/601_Beta_Test_latest/posts/sidpost.html</loc>
+    <lastmod>2023-06-15T15:17:05.037Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dacss.github.io/601_Beta_Test_latest/posts/experiment.html</loc>
+    <lastmod>2023-06-15T15:17:06.217Z</lastmod>
   </url>
   <url>
     <loc>https://dacss.github.io/601_Beta_Test_latest/about/about.html</loc>
-    <lastmod>2023-06-13T00:53:53.645Z</lastmod>
+    <lastmod>2023-06-15T15:17:07.257Z</lastmod>
   </url>
 </urlset>
